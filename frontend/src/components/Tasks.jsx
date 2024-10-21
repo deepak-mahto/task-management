@@ -1,15 +1,9 @@
-const Tasks = ({ tasks }) => {
+const Tasks = ({ title, description, completed }) => {
   return (
     <div>
-      {tasks.map((task) => {
-        return (
-          <div>
-            <h3>{task.title}</h3>
-            <h3>{task.description}</h3>
-            <h3>{task.completed ? "Completed" : "Mark as complete"}</h3>
-          </div>
-        );
-      })}
+      <h3>{title}</h3>
+      <h3>{description}</h3>
+      <h3>{completed ? "Completed" : "Mark as complete"}</h3>
     </div>
   );
 };

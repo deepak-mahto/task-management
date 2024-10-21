@@ -10,11 +10,20 @@ const App = () => {
       const json = await res.json();
       setTasks(json.tasks);
     });
-  }, [tasks]);
+  }, []);
   return (
     <div>
       <CreateTask />
-      <Tasks tasks={tasks} />
+      {tasks.map((task) => {
+        return (
+          <Tasks
+            key={task._id}
+            title={task.title}
+            description={task.description}
+            completed={task.completed}
+          />
+        );
+      })}
     </div>
   );
 };
