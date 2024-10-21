@@ -1,11 +1,13 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const { createTask, updateTask } = require("./types");
 const { task } = require("./db");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/task", async (req, res) => {
   const createPayload = req.body;
