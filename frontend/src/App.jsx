@@ -6,10 +6,12 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/tasks").then(async (res) => {
-      const json = await res.json();
-      setTasks(json.tasks);
-    });
+    setInterval(() => {
+      fetch("http://localhost:3000/tasks").then(async (res) => {
+        const json = await res.json();
+        setTasks(json.tasks);
+      });
+    }, 5000);
   }, []);
   return (
     <div>
