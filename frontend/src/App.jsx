@@ -1,5 +1,13 @@
+import CreateTask from "./components/CreateTask";
+import Tasks from "./components/Tasks";
+
 const App = () => {
-  return <div>Task Management</div>;
+  return (
+    <div>
+      <CreateTask />
+      <Tasks />
+    </div>
+  );
 };
 
 export default App;
